@@ -26,9 +26,3 @@ App() #run the game
 # Run the game by executing the following command. 
 # python game.py
 # 
-# You will see the following screen. 
-# You can see the text “Start!” in the middle of the screen. 
-# Press the escape key to exit the game. 
-# Conclusion 
-# You have learned how to create a simple game using the Pyxel library. 
-# You can download the source code from the following link.
