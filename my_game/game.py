@@ -5,15 +5,31 @@ class App:
 
     def __init__(self):
         pyxel.init(160, 120 ,title="my game")
+        pyxel.mouse(True)
+        self.number = 0
+        self.x = 0
+        
         pyxel.run(self.update, self.draw)
+
     
     def update(self):
         if pyxel.btnp(pyxel.KEY_ESCAPE): #if escape key is pressed
             pyxel.quit() #exit the game
+        
+        if pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT): #if left mouse button is pressed
+            pyxel.mouse_x
+            pyxel.mouse_y
+
+            if pyxel.mouse_x >= 110 and pyxel.mouse_x <= 120 and pyxel.mouse_y >= 50 and pyxel.mouse_y <= 70:
+                self.number += 1
+            elif pyxel.mouse_x >= 20 and pyxel.mouse_x <= 40 and pyxel.mouse_y >= 60 and pyxel.mouse_y <= 70:
+                self.number -= 1
 
     def draw(self):
         pyxel.cls(pyxel.COLOR_DARK_BLUE) #clear the screen with dark blue color
-        pyxel.text(70, 60, "Start!", pyxel.COLOR_YELLOW) #draw text at x=70, y=60 with yellow color
+        pyxel.text(70, 60, f"{self.number}", pyxel.COLOR_YELLOW) #draw text at x=70, y=60 with yellow color
+        pyxel.text(30, 60, "-", pyxel.COLOR_WHITE) 
+        pyxel.text(110, 60, "+", pyxel.COLOR_WHITE) 
         pass
 
 App() #run the game
