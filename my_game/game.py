@@ -22,6 +22,11 @@ class App:
     def update(self):
         if pyxel.btnp(pyxel.KEY_ESCAPE): #if escape key is pressed
             pyxel.quit() #exit the game
+
+        if pyxel.btn(pyxel.KEY_RIGHT):
+            self.player_x += 2 #move right
+        elif pyxel.btn(pyxel.KEY_LEFT):   
+            self.player_x -= 2 #move left
         
     def draw(self):
         pyxel.cls(pyxel.COLOR_DARK_BLUE) #clear the screen with dark blue color
